@@ -2,14 +2,13 @@
 
 
 # Todo app with Angular 2 and Firebase
-A simple Todo app example built with **Angular 2**. The app features a **Firebase** backend with **OAuth** authentication, and an **immutable** task list. Try the demo at <a href="https://ng2-todo-app.firebaseapp.com" target="_blank">https://ng2-todo-app.firebaseapp.com</a>.
+A simple Todo app example built with **Angular 2**. The app features a **Firebase** backend with **OAuth** authentication. Try the demo at <a href="https://ng2-todo-app.firebaseapp.com" target="_blank">https://ng2-todo-app.firebaseapp.com</a>.
 
 - Angular `2.0.0-alpha.45`
 - Firebase
   - JSON Datastore
   - OAuth authentication with GitHub, Google, and Twitter
   - Hosting
-- Immutable
 - Typescript
 - SystemJS
 - SASS

@@ -1,5 +1,5 @@
 import { Component, FORM_DIRECTIVES, View } from 'angular2/angular2';
-import { TaskService } from 'core/task/task-service';
+import { TaskStore } from 'core/task/task-store';
 
 
 @Component({
@@ -17,7 +17,7 @@ import { TaskService } from 'core/task/task-service';
 export class TaskForm {
   title: string = '';
 
-  constructor(private taskService: TaskService) {}
+  constructor(private tasks: TaskStore) {}
 
   clear(): void {
     this.title = '';
@@ -26,7 +26,7 @@ export class TaskForm {
   submit(): void {
     const title = this.title.trim();
     if (title.length) {
-      this.taskService.createTask(title);
+      this.tasks.add(title);
     }
     this.clear();
   }

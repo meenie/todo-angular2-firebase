@@ -1,13 +1,14 @@
 import {
   Component,
   CORE_DIRECTIVES,
+  EventEmitter,
   FORM_DIRECTIVES,
   Input,
+  Output,
   View
 } from 'angular2/angular2';
 
 import { ITask } from 'core/task/task';
-import { TaskService } from 'core/task/task-service';
 import { Autofocus } from 'directives/autofocus-directive';
 
 
@@ -28,13 +29,14 @@ import { Autofocus } from 'directives/autofocus-directive';
 export class TaskItem {
   @Input() model: ITask;
 
+  @Output() deleteTask: EventEmitter = new EventEmitter();
+  @Output() updateTask: EventEmitter = new EventEmitter();
+
   editing: boolean = false;
   title: string = '';
 
-  constructor(private taskService: TaskService) {}
-
   delete(): void {
-    this.taskService.deleteTask(this.model);
+    this.deleteTask.next({task: this.model});
   }
 
   editTitle(): void {
@@ -46,7 +48,10 @@ export class TaskItem {
     if (this.editing) {
       const title: string = this.title.trim();
       if (title.length && title !== this.model.title) {
-        this.taskService.updateTask(this.model, {title});
+        this.updateTask.next({
+          task: this.model,
+          changes: {title}
+        });
       }
       this.stopEditing();
     }
@@ -57,8 +62,11 @@ export class TaskItem {
   }
 
   toggleStatus(): void {
-    this.taskService.updateTask(this.model, {
-      completed: !this.model.completed
+    this.updateTask.next({
+      task: this.model,
+      changes: {
+        completed: !this.model.completed
+      }
     });
   }
 }
