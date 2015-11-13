@@ -8,8 +8,8 @@ import {
   View
 } from 'angular2/angular2';
 
-import { ITask } from 'core/task/task';
-import { Autofocus } from 'directives/autofocus-directive';
+import { ITask } from '../../../core/task/task';
+import { Autofocus } from '../../../directives/autofocus-directive';
 
 
 @Component({
@@ -29,8 +29,8 @@ import { Autofocus } from 'directives/autofocus-directive';
 export class TaskItem {
   @Input() model: ITask;
 
-  @Output() deleteTask: EventEmitter = new EventEmitter();
-  @Output() updateTask: EventEmitter = new EventEmitter();
+  @Output() deleteTask: EventEmitter<any> = new EventEmitter();
+  @Output() updateTask: EventEmitter<any> = new EventEmitter();
 
   editing: boolean = false;
   title: string = '';

@@ -1,7 +1,7 @@
 import { provide } from 'angular2/angular2';
 import Firebase from 'firebase';
-import { AuthService } from 'core/auth/auth-service';
-import { TaskStore } from 'core/task/task-store';
+import { AuthService } from '../auth/auth-service';
+import { TaskStore } from './task-store';
 
 
 export const TASK_PROVIDERS: any[] = [

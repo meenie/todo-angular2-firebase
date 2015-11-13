@@ -1,4 +1,4 @@
-import { FirebaseArray } from 'core/firebase/firebase-array';
+import { FirebaseArray } from '../firebase/firebase-array';
 import { Task } from './task';
 
 

@@ -1,6 +1,6 @@
 import { Component, View } from 'angular2/angular2';
 import { CanActivate } from 'angular2/router';
-import { AuthRouteHelper } from 'core/auth/auth-route-helper';
+import { AuthRouteHelper } from '../../core/auth/auth-route-helper';
 import { TaskForm } from './task-form/task-form';
 import { TaskList } from './task-list/task-list';
 

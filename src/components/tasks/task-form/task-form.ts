@@ -1,5 +1,5 @@
 import { Component, FORM_DIRECTIVES, View } from 'angular2/angular2';
-import { TaskStore } from 'core/task/task-store';
+import { TaskStore } from '../../../core/task/task-store';
 
 
 @Component({
