@@ -20,10 +20,8 @@ var paths = {
     src: [
       'node_modules/angular2/bundles/angular2.min.js',
       'node_modules/angular2/bundles/router.dev.js', //{min.js,min.js.map}',
-      'node_modules/es6-module-loader/dist/es6-module-loader.{js,js.map}',
       'node_modules/es6-shim/es6-shim.{map,min.js}',
       'node_modules/firebase/lib/firebase-web.js',
-      'node_modules/immutable/dist/immutable.min.js',
       'node_modules/systemjs/dist/system.{js,js.map}'
     ],
     target: 'target/lib'
