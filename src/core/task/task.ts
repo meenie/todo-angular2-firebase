@@ -4,7 +4,7 @@ import Firebase from 'firebase';
 export interface ITask {
   completed: boolean;
   createdAt: number;
-  key?: string;
+  $key?: string;
   title: string;
 }
 

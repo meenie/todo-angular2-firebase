@@ -3,10 +3,10 @@ import {
   Component,
   Input,
   NgFor,
+  Observable,
   View
 } from 'angular2/angular2';
 import { RouterLink, RouteParams } from 'angular2/router';
-import { List } from 'immutable';
 import { TaskItem } from '../task-item/task-item';
 import { TaskListFilterPipe } from './task-list-filter-pipe';
 
@@ -30,7 +30,7 @@ import { TaskListFilterPipe } from './task-list-filter-pipe';
 })
 
 export class TaskList {
-  @Input() tasks: List<any>;
+  @Input() tasks: Observable<any>;
 
   filter: string;
 

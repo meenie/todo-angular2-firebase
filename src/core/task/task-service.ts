@@ -13,7 +13,7 @@ export class TaskService {
   }
 
   deleteTask(task: ITask): void {
-    this.ref.child(task.key).remove((error: Error) => {
+    this.ref.child(task.$key).remove((error: Error) => {
       if (error) {
         console.error('ERROR @ deleteTask :', error);
       }
@@ -21,7 +21,7 @@ export class TaskService {
   }
 
   updateTask(task: ITask, changes: any): void {
-    this.ref.child(task.key).update(changes, (error: Error) => {
+    this.ref.child(task.$key).update(changes, (error: Error) => {
       if (error) {
         console.error('ERROR @ updateTask :', error);
       }
