@@ -8,7 +8,7 @@ export interface IFirebaseRecord {
 
 
 export function firebaseStore(ref: Firebase): Observable<any> {
-  return Observable.create((observer: any) => {
+  return Observable.create((subscriber: any) => {
     let list: List<any> = List();
 
     ref.on('child_added', created);
@@ -17,7 +17,7 @@ export function firebaseStore(ref: Firebase): Observable<any> {
     ref.once('value', () => emit());
 
     function emit(): void {
-      observer.next(list);
+      subscriber.next(list);
     }
 
     function created(snapshot: FirebaseDataSnapshot): void {
